@@ -1,0 +1,4 @@
+// skt 模块主要包括一些公共的功能套件
+
+include ':skt:lib'  //主要存放一些共有对base的二次封装功能类
+include ':skt:kit'  //增强套件

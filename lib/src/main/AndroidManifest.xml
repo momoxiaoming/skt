@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skt.lib">
+
+    <application>
+        <activity
+            android:name=".ui.ContainerActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/OpenTheme" />
+
+        <activity
+            android:name=".ui.ContainerFullActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/OpenTheme" />
+
+        <activity
+            android:name=".ui.ContainerTitleActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/OpenTheme" />
+    </application>
+</manifest>
