@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.io.File
+import java.util.concurrent.Callable
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
@@ -19,8 +20,14 @@ import java.util.concurrent.atomic.AtomicBoolean
  */
 @SuppressLint("StaticFieldLeak")
 object Debuger {
+    class DefaultContextProvider : Callable<Context> {
+        override fun call(): Context {
+            return AppMod.app
+        }
+    }
 
-    private val context: Context=AppMod.app.applicationContext
+    private var contextProvider: Callable<Context> = DefaultContextProvider()
+
     private val scope = CoroutineScope(Job() + Dispatchers.Default)
     private val changed = AtomicBoolean(true)
 
@@ -48,6 +55,21 @@ object Debuger {
 
     var restartNeed: Boolean = false
         private set
+
+
+    /**
+     * context provider
+     * 如果不设置，则使用 [DefaultContextProvider]从[AppMod]里面拿。
+     *
+     * 如果涉及初始化顺序问题的话，就自己设置
+     */
+    fun setContextProvider(ctxProvider: Callable<Context>) {
+        contextProvider = ctxProvider
+    }
+
+    private val context: Context
+        get() = contextProvider.call()
+
     /**
      * 设置debug开关
      *

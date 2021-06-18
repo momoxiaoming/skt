@@ -1,4 +1,4 @@
-package com.skt.lib.ui
+package com.skt.lib.ui.activity
 
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route

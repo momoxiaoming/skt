@@ -1,4 +1,4 @@
-package com.skt.lib.ui
+package com.skt.lib.ui.activity
 
 import android.util.Log
 import androidx.fragment.app.Fragment

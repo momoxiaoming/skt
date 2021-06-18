@@ -1,9 +1,8 @@
-package com.skt.lib.ui
+package com.skt.lib.ui.activity
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.mm.kit.common.util.SystemUiUtil
 import com.skt.lib.ARouterPath
 import com.skt.lib.R
 import com.skt.lib.databinding.LibActivityTitleContainerBinding

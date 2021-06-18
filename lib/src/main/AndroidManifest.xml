@@ -4,21 +4,21 @@
 
     <application>
         <activity
-            android:name=".ui.ContainerActivity"
+            android:name=".ui.activity.ContainerActivity"
             android:excludeFromRecents="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/OpenTheme" />
 
         <activity
-            android:name=".ui.ContainerFullActivity"
+            android:name=".ui.activity.ContainerFullActivity"
             android:excludeFromRecents="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/OpenTheme" />
 
         <activity
-            android:name=".ui.ContainerTitleActivity"
+            android:name=".ui.activity.ContainerTitleActivity"
             android:excludeFromRecents="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"

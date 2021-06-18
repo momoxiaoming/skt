@@ -6,9 +6,11 @@ import com.kit.base.app.BaseAppDelegate
 import com.mc.cpyr.kit.util.Debuger
 import com.mm.kit.common.http.OkApi
 import com.mm.kit.common.log.VLog
+import com.mm.kit.common.process.ProcessUtils
 import z.hol.gq.GsonQuick
 import z.hol.gq.GsonQuickLogger
 import java.io.Console
+import java.util.concurrent.Callable
 
 /**
  * 所有application代理都默认走DefaultAppDelegate
@@ -25,6 +27,26 @@ open abstract class DefaultAppDelegate(app: Application) : BaseAppDelegate(app) 
 
     override fun onCreate() {
         super.onCreate()
+    }
+
+    override fun initLog() {
+        super.initLog()
+        // 因为初始化log，太早了，下面的debugOn开关，可能拿不到
+        Debuger.setContextProvider(Callable {
+            app
+        })
+        Debuger.forceDebug = false
+        val processName = ProcessUtils.currentProcessName
+        val procNamespace = ProcessUtils.getProcessScope(processName)
+        val logPrefix = this.logPrefix
+        val namespace = if (procNamespace.isNullOrEmpty()) {
+            logPrefix
+        } else {
+            "${logPrefix}::${procNamespace}"
+        }
+        VLog.initializeXLog(app, namespace, Debuger.debugOn)
+        VLog.TAG_PREFIX = logPrefix
+        VLog.setDefaultTag("main")
 
     }
 
@@ -35,14 +57,19 @@ open abstract class DefaultAppDelegate(app: Application) : BaseAppDelegate(app) 
             ARouter.openLog()
             ARouter.openDebug()
         }
+
+
         ARouter.init(app)
         OkApi.init(app.applicationContext)
         OkApi.DEBUG = Debuger.debugOn
+
+
 
         GsonQuick.setLogger { p0, p1 ->
             VLog.w(p0 ?: "null json")
             VLog.printErrStackTrace(p1, "gson parse error")
         }
     }
+
 
 }
