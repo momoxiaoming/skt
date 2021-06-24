@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="GodView">
-        <!--默认的背景-->
-        <attr format="color" name="godBackgroundColor"/>
-        <!--选中时的背景-->
-        <attr format="color" name="godSelBackgroundColor"/>
-        <!--取消选中时的背景-->
-        <attr format="color" name="godNorBackgroundColor"/>
-        <!--圆角以及单独圆角-->
-        <attr format="dimension" name="godCornerRadius"/>
-        <attr format="dimension" name="godTopAndLeftCornerRadius"/>
-        <attr format="dimension" name="godTopAndRightCornerRadius"/>
-        <attr format="dimension" name="godBottomAndRightCornerRadius"/>
-        <attr format="dimension" name="godBottomAndLeftCornerRadius"/>
-        <!--阴影-->
-        <attr format="dimension" name="godElevation"/>
-        <attr format="dimension" name="godMaxElevation"/>
+    <declare-styleable name="QueueTextView">
+        <attr format="color" name="first_textColor"/>
+        <attr format="string" name="first_text"/>
+        <attr format="dimension" name="first_textSize"/>
+        <attr name="first_textStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
 
-        <attr format="boolean" name="godUseCompatPadding"/>
-        <attr format="boolean" name="godPreventCornerOverlap"/>
+        <attr format="color" name="second_textColor"/>
+        <attr format="string" name="second_text"/>
+        <attr format="dimension" name="second_textSize"/>
+        <attr name="second_textStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
 
+        <attr format="color" name="end_textColor"/>
+        <attr format="string" name="end_text"/>
+        <attr format="dimension" name="end_textSize"/>
+        <attr name="end_textStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
     </declare-styleable>
 
 </resources>

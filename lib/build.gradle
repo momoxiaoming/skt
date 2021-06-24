@@ -31,5 +31,8 @@ android {
 dependencies {
     implementation project(":baseKit:base")
     implementation project(":baseKit:ext")
+    api rootProject.smartRefreshLayout
+    api rootProject.smartRefreshHeader
+    api rootProject.smartRefreshFooter
 
 }
