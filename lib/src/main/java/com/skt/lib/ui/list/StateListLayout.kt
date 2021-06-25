@@ -1,16 +1,14 @@
-package com.skt.lib.ui.adapter
+package com.skt.lib.ui.list
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import androidx.annotation.Nullable
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
-import com.skt.lib.ui.list.AbsStateAdapter
 
 /**
  * StateRecycleView
