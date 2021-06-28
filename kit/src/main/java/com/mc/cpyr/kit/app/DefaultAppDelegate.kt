@@ -6,10 +6,8 @@ import com.kit.base.app.BaseAppDelegate
 import com.mc.cpyr.kit.util.Debuger
 import com.mm.kit.common.http.OkApi
 import com.mm.kit.common.log.VLog
-import com.mm.kit.common.process.ProcessUtils
+import com.mm.kit.common.util.ProcessUtils
 import z.hol.gq.GsonQuick
-import z.hol.gq.GsonQuickLogger
-import java.io.Console
 import java.util.concurrent.Callable
 
 /**
