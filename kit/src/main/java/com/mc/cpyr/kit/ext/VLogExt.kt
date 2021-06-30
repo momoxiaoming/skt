@@ -11,7 +11,7 @@ import com.mm.kit.common.log.considerLog
  */
 inline fun <reified T> T.logI(message: () -> Any?) {
     if (considerLog(VLog.LEVEL_DEBUG)) {
-        VLog.scoped("${T::class.java.simpleName}").i(message()?.toString())
+        VLog.scoped(T::class.java.simpleName).i(message()?.toString())
     }
 }
 
@@ -24,7 +24,7 @@ inline fun <reified T> T.logI(message: () -> Any?) {
 
 inline fun <reified T> T.logE(message: () -> Any?) {
     if (considerLog(VLog.LEVEL_DEBUG)) {
-        VLog.scoped("${T::class.java.simpleName}").e( message()?.toString())
+        VLog.scoped(T::class.java.simpleName).e( message()?.toString())
     }
 }
 
